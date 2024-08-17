@@ -1,0 +1,75 @@
+
+1 Problem Statement
+In the first semester at IIT Patna, let us assume the students enrolled for the three subjects, EE101, CS102, and CH103. Note that the subject code is a total of five characters, two uppercase followed by three digits.
+Write a C program which takes as inputs the three-digit (integer) associated with subject codes and scores out of 100. Further, print the given inputs in the given format. [10 Marks] Your Score in EE101 is 85
+Your Score in CS102 is 95
+Your Score in CH103 is 90
+Further, compute the average and grade of the students (only using if control
+statements, syntax given) as per the given grading policy. if average ≥ 85 then the Grade is Ex
+if average < 85, ≥ 70 then the Grade is A
+if average < 70, ≥ 55 then the Grade is B
+if average < 55, then the Grade is F
+Finally, print the average and grade in the given format. Your average is 90, and the Grade is Ex.
+2 Sample Output
+Write digit code and score for EE: 101, 85 Write digit code and score for CS: 102, 95 Write digit code and score for CH: 103, 90 Your Score in EE101 is 85
+Your Score in CS102 is 95
+Your Score in CH103 is 90
+Your average is 90, and the Grade is Ex.
+3 if syntax
+if (condition)
+{
+[10 Marks]
+[10 Marks]
+...
+block of statements ...
+}
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int ee101, cs102, ch103;
+    
+    printf("Enter the score for EE: 101, ");
+    scanf("%d",&ee101);
+    
+    printf("Enter the score for CS: 102, ");
+    scanf("%d",&cs102);
+    
+    printf("Enter the score for CH: 103, ");
+    scanf("%d",&ch103);
+    
+    printf("Your Score in EE101 is %d \n",ee101);
+    printf("Your Score in CS102 is %d\n",cs102);
+    printf("Your Score in CH103 is%d\n",cs102);
+    
+    int average;
+    average = (ee101 + cs102 + ch103)/3;
+    
+
+    const char* grade;
+
+    if (average >= 85){
+        grade = "EX";
+    }
+    if (average < 85 && average >= 70) {
+        grade = "A";
+    }
+    if (average < 70 && average >= 55) {
+        grade = "B";
+    }    
+    if (average < 55){
+        grade = "F";
+    }
+
+
+    printf("Your average is %d, and the Grade is %s",average,grade);
+    
+    
+    
+    
+    
+    return 0;
+}
